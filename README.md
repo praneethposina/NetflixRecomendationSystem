@@ -1,2 +1,2 @@
 # NetflixRecomendationSystem
-Find the Report at reports folder
+Find the Report in the reports folder

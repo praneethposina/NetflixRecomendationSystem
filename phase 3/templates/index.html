@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Title Suggestions</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container-1">
+      <div class="base-layer">
+        <h1 class="title">NETFLIX</h1>
+        <p class="sub-title">MOVIES and SHOWS RECOMMENDATION SYSTEM</p>
+      </div>
+      <div class="second-layer">
+        <h3 class="subtitle">Enter the Details Below</h3>
+        <form action="/results" method="get">
+          <section>
+            <div>
+              <label for="input"></label
+              ><input
+                type="text"
+                id="movie"
+                name="movie"
+                placeholder="Enter a Movie/Show"
+              />
+              <ul id="suggestions"></ul>
+              <input
+                type="submit"
+                class="next"
+                value="Suggest Similar Content"
+              />
+            </div>
+            <div></div>
+          </section>
+        </form>
+        <div class="end-link">
+          <a href="{{ url_for('eda') }}">View Exploratory Data Analysis</a>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

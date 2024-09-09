@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDA</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="base-layer">
+      <h1 class="title">NETFLIX</h1>
+      <p class="sub-title">MOVIES and SHOWS RECOMMENDATION SYSTEM</p>
+    </div>
+    <div class="second-layer">
+      <div class="results">
+        <p class="result-title">Content Similar to {{ org }} are:</p>
+        {% if movies %} {% for movie in movies %}
+        <div class="movie-container">
+          <h2 class="movie-details-title">{{ movie['title'] }}</h2>
+          <div class="movie-details"><span class="black-text">Type: </span> {{ movie['type'] }}</div>
+          <div class="movie-details"><span class="black-text">Date Added: </span>{{ movie['date_added'] }}</div>
+          <div class="movie-details"><span class="black-text">Release Year: </span>{{ movie['release_year'] }}
+          </div>
+          <div class="movie-details"><span class="black-text">Rating: </span>{{ movie['rating'] }}</div>
+          <div class="movie-details"><span class="black-text">Description: </span>{{ movie['description'] }}
+          </div>
+        </div>
+        {% endfor %} 
+        {% else %}
+        <span class="error">{{error}}</span>
+        {% endif %}
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

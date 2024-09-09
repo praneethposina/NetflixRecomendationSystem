@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDA</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="f-layer">
+      <h1 class="subtitle">Exploratory Data Analysis</h1>
+    </div>
+    <div class="s-layer">
+      <div class="gallery">
+        {% for image in images %}
+        <a href="/image/{{ loop.index }}?url={{ url_for('static', filename=image) }}">
+          <img src="{{ url_for('static', filename=image) }}" alt="Image" />
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
